@@ -9,13 +9,14 @@ import os
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET']) #homepage
 def home_page():
-	return render_template('index.html')
+	return render_template('index.html') #homepage
 
 @app.route('/<name>')
 def profile(name):
-	return render_template('index.html', name=name)
+	new_name = name + "is a friend of freedom"
+	return render_template('index.html', name=new_name)
 
 
 @app.route('/add_numbers', methods=['GET','POST'])
